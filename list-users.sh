@@ -1,4 +1,8 @@
 #!/bin/bash
+######################################
+# Auther:Asif.Patel
+#This script will help you to list users who has access to this repository.
+helper()
 
 # GitHub API URL
 API_URL="https://api.github.com"
@@ -35,7 +39,13 @@ function list_users_with_read_access {
         echo "$collaborators"
     fi
 }
-
+function helper {
+expected_cmd_args=2
+if [ $# -ne $expected_cmd_args ];then
+echo "Please enter proper args to see result"
+echo "sorry no result found"
+fi
+}
 # Main script
 
 echo "Listing users with read access to ${REPO_OWNER}/${REPO_NAME}..."
